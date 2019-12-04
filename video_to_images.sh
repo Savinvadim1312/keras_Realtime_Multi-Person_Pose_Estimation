@@ -10,7 +10,7 @@ if [[ -n "$fps" ]]; then
 
     echo "Processing $no_ext"
 
-    ffmpeg -i $f -r $fps $"sample_images/$no_ext%03d.png"
+    ffmpeg -i $f -r $fps $"sample_images/$no_ext/%03d.png"
   done
   echo "Done"
   
