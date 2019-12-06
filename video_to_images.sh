@@ -9,7 +9,7 @@ if [[ -n "$fps" ]]; then
     no_ext="${filename%.*}"
 
     echo "Processing $no_ext"
-
+    mkdir "sample_images/$no_ext"
     ffmpeg -i $f -r $fps $"sample_images/$no_ext/$no_ext%03d.png"
   done
   echo "Done"
