@@ -116,6 +116,8 @@ for directory in os.listdir('sample_images'):
 
         o['people'][0]['pose_keypoints'] = all_peaks_flat
 
-
-        with open('sample_jsons/'+directory+"/"file_noExt+'.json', 'w') as outfile:
+        if not os.path.exists('sample_jsons/'+directory):
+          os.mkdir('sample_jsons/'+directory)
+        
+        with open('sample_jsons/'+directory+'/'+file_noExt+'.json', 'w') as outfile:
             json.dump(o, outfile)
